@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>week 3</title>
+    <link rel="stylesheet" href="leaflet.css" />
+    <script src="leaflet.js"></script>
+    <style>
+        body {
+        padding: 0;
+        margin: 0;
+        }
+        html, body, #map {
+        height: 100%;
+        width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script>
+        let map = L.map("map", {center: [-1.0943, 37.0133], zoom: 17});
+        L.tileLayer(
+            "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", 
+            {attribution: '&copy; <a href="http://' + 
+            'www.openstreetmap.org/copyright">OpenStreetMap</a>'}
+        ).addTo(map);
+
+        /*markers*/
+        let emb = L.marker([-1.0956, 37.0138]).addTo(map); emb.bindPopup("EMB");
+        let assemblyHall = L.marker([-1.0953, 37.0150]).addTo(map); assemblyHall.bindPopup("Assembly Hall");
+        let scc = L.marker([-1.0945, 37.0147]).addTo(map); scc.bindPopup("SCC");
+        let gradSquare = L.marker([-1.0963, 37.0152]).addTo(map); gradSquare.bindPopup("Graduation Square");
+        let adm1 = L.marker([-1.0964, 37.0144]).addTo(map); adm1.bindPopup("Jkuat Admin Block 1");
+        let hosp = L.marker([-1.0965, 37.0129]).addTo(map); hosp.bindPopup("Jkuat Hospital");
+        let techHouse = L.marker([-1.0945, 37.0169]).addTo(map); techHouse.bindPopup("Jkuat Technology House");
+        let elb = L.marker([-1.0964, 37.0137]).addTo(map); elb.bindPopup("ELB");
+        let nclb = L.marker([-1.0943, 37.0133]).addTo(map); nclb.bindPopup("NCLB");
+        let studeez = L.marker([-1.0945, 37.0163]).addTo(map); studeez.bindPopup("Jkuat Students Center");
+    </script>
+</body>
+</html>
